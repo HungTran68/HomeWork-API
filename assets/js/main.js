@@ -11,11 +11,11 @@ const getDataFromAPI = async(url, timeout) => {
     } catch (error) {
      
       if (axios.isCancel(error)) {
-        console.log('Request was cancelled:', error.message);
+        console.log('Huỷ', error.message);
       } else if (error.code === 'ECONNABORTED') {
-        console.error('Request timeout:', error.message);
+        console.error('Hết thời gian:', error.message);
       } else {
-        console.error('Error fetching data:', error.message);
+        console.error('Lỗi api', error.message);
       }
       throw error;
     }
@@ -30,3 +30,8 @@ const getDataFromAPI = async(url, timeout) => {
     .catch(error => {
       console.error('loi', error);
     });
+
+
+
+
+ 
